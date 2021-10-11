@@ -21,15 +21,15 @@
 <meta property="og:description" content="初始化建立联系1、    Git下载地址https:&#x2F;&#x2F;www.git-scm.com&#x2F;download&#x2F;win安装参照https:&#x2F;&#x2F;www.cnblogs.com&#x2F;xwgcxk&#x2F;p&#x2F;9209237.html（小乌龟可以不安装，没什么用，使用git bash 就行）3.1添加ssh-key在gitlab完成注册后，首先访问这里，向你的帐户添加ssh keys，ssh keys的生成可以参考如下的">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-10-09T13:22:14.000Z">
-<meta property="article:modified_time" content="2021-10-11T02:42:14.821Z">
+<meta property="article:modified_time" content="2021-10-11T02:56:12.478Z">
 <meta property="article:author" content="Nishizumi 56">
 <meta property="article:tag" content="bupt735">
 <meta name="twitter:card" content="summary">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
-    <link rel="stylesheet" href="/css/style.css?v=1633920144920">
+    <link rel="stylesheet" href="/css/style.css?v=1633921623025">
      
     
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1633920144920">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1633921623025">
     
 <meta name="generator" content="Hexo 5.4.0"></head>
 
@@ -146,38 +146,30 @@
 <h2 id="获取项目："><a href="#获取项目：" class="headerlink" title="获取项目："></a>获取项目：</h2><p>使用git branch 查看本地是否具有dev分支(开发中不会直接提交到master分支，公司远端有dev和master分支，代码都提交到dev分支)<br>如果没有 git fetch origin dev<br>git checkout -b dev origin/dev在本地创建分支dev并切换到该分支<br>git pull origin dev就可以把gitLab上dev分支上的内容都拉取到本地了<br>再次查询本地是否存在dev分支，还需存在master分支，git branch<br>如果不存在master分支，执行命令 git checkout -b master<br>切换到dev分支，git checkout dev<br>此时最新的代码就已经拉取到本地，并且本地使用的分支为dev分支</p>
 <blockquote>
 <h1 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h1><blockquote>
-<blockquote>
 <p>git bash 常用指令(注意空格)：</p>
 </blockquote>
 <h2 id="分支操作："><a href="#分支操作：" class="headerlink" title="分支操作："></a>分支操作：</h2><blockquote>
 <p>git branch 查看分支<br>git branch （分支名字）创建分支<br>git branch -d  (分支名字) 删除分支<br>git checkout （分支名字）切换其他分支<br>git checkout -b（分支名字）创建并切换其他分支<br>git merge (分支名字) 与（分支名字）合并</p>
 </blockquote>
 </blockquote>
-</blockquote>
-<blockquote>
 <blockquote>
 <h2 id="上传："><a href="#上传：" class="headerlink" title="上传："></a>上传：</h2><blockquote>
 <p>git add . 添加全部文件<br>git add (文件) （文件）添加文件<br>git add (文件夹) 添加文件夹<br>git commit -m “(描述)” 为缓存内的文件进行描述<br>git push 上传到远程分支（当前分支）<br>git push origin (分支名字) 上传到(分支名字)分支</p>
 </blockquote>
 </blockquote>
-</blockquote>
-<blockquote>
 <blockquote>
 <h2 id="下拉："><a href="#下拉：" class="headerlink" title="下拉："></a>下拉：</h2><blockquote>
 <p>Git clone (项目地址)<br>git pull 拉取当前的远程分支<br>git pull origin （分支名字）拉取分支并<br>git pull origin （远程分支）:（本地分支）拉取远程分支与本地分支合并</p>
 </blockquote>
 </blockquote>
-</blockquote>
-<blockquote>
 <blockquote>
 <h2 id="回退："><a href="#回退：" class="headerlink" title="回退："></a>回退：</h2><blockquote>
 <h3 id="git-add-后撤销："><a href="#git-add-后撤销：" class="headerlink" title="git add 后撤销："></a>git add 后撤销：</h3><p>git reset HEAD . 撤销所有add文件<br>git reset HEAD -文件名字e撤销单个add文件</p>
-</blockquote>
-</blockquote>
-</blockquote>
 <h3 id="git-commit-后撤销："><a href="#git-commit-后撤销：" class="headerlink" title="git commit 后撤销："></a>git commit 后撤销：</h3><p>git reset –soft head 只回退commit的信息，保留修改代码：<br>git reset –hard head^ 彻底回退到上次commit版本，不保留修改代码：<br>说明：<br>HEAD ：当前版本<br>HEAD^ ：上一个版本<br>–hard 参数会抛弃当前工作区的修改<br>–soft 参数的话会回退到之前的版本，但是保留当前工作区的修改，可以重新提交<br>git checkout . 撤销所有本地改动代码：<br>git reset –hard （远程分支名）本地代码回退到与git远程仓库保持一致 </p>
 <h3 id="git-push撤销："><a href="#git-push撤销：" class="headerlink" title="git push撤销："></a>git push撤销：</h3><p>回滚此次push到服务器的代码：<br>git log查看commit的信息<br>git revert 以前commit的id<br>git push 此时本地回滚的代码到服务器就可以了</p>
 <h3 id="git-merge-撤销："><a href="#git-merge-撤销：" class="headerlink" title="git merge 撤销："></a>git merge 撤销：</h3><p>$ git checkout 【行merge操作时所在的分支】<br>$ git reset –hard 【merge前的版本号】</p>
+</blockquote>
+</blockquote>
 
   </article>
 
@@ -251,7 +243,7 @@
 
  
 
-<script async src="/js/app.js?v=1633920144922"></script>
+<script async src="/js/app.js?v=1633921623026"></script>
 
 
 
